@@ -1,0 +1,134 @@
+---
+vendor: RealThread
+dvendor: GigaDevice
+name: GD32H7
+version: 0.1.1
+yaml_version: 1
+type: Chip_Support_Packages
+family_name: GD32
+series:
+  description: |-
+    GigaDevice's GD32H7 series of high-performance MCUs are based on the ARM Cortex-M7 core. These MCUs feature high processing power, rich peripherals, and multiple high-speed interfaces, making them ideal for demanding applications requiring intensive computing and real-time performance.
+    Typical applications include industrial control, motor drives, digital power supplies, medical equipment, and advanced IoT devices.
+
+      - Up to 600MHz CPU frequency
+      - FPU and DSP instructions
+      - L1 cache (I-Cache and D-Cache)
+      - Multi-layer AHB bus matrix
+      - Rich analog and digital peripherals
+      - Multiple high-speed communication interfaces
+  series_name: GD32H7
+  peripheral: {}
+  sub_series:
+  - sub_series_name: GD32H759
+    chips:
+    - chip_name: GD32H759IM
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x3C0000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      cpu_info:
+        max_clock: '600000000'
+        fpu: '1'
+        mpu: '1'
+        endian: Little-endian
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H7IM/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    ui:
+      uart:
+        default_value: UART0
+        prompt_message_zh: 选择一个串口作为控制台信息输出接口
+      tx_pin:
+        default_value: PA9
+      rx_pin:
+        default_value: PA10
+        prompt_message_zh: 设置控制台设备的数据发送引脚的名称，名称应该具有以下格式"P+[端口名称][端口编号]", 比如：PA9, PB6
+    docs:
+    - file: Documents/GD32H759xxDatasheet_Rev1.9.pdf
+      title: GD32H7 Reference Manual
+    svd:
+      file: debug/svd/GD32H7xx.svd
+    project_type:
+      bare_metal:
+        function_map:
+          clk_init: none
+          sysTick: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/baremetal
+      rtt_nano:
+        function_map:
+          clk_init: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/nano
+      rtt:
+        function_map:
+          rt_hw_board_init;: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        - SOC_SERIES_GD32H7xx  
+        source_files:
+        - drivers/rtt
+  docs:
+  - file: Documents/DUI0646B_cortex_m7_dgug.pdf
+    title: Cortex-M7 Generic User Guide
+  source_files:
+    file:
+    - libraries/GD32H7xx_standard_peripheral
+    - libraries/CMSIS/GD/GD32H7xx/Include/system_gd32h7xx.h
+    - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+    - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx_libopt.h
+    - libraries/CMSIS/GD/GD32H7xx/Source/system_gd32h7xx.c
+    - libraries/CMSIS/core_cm7.h
+    - libraries/CMSIS/cmsis_compiler.h
+    - libraries/CMSIS/cmsis_version.h
+    - libraries/CMSIS/cmsis_gcc.h
+    - libraries/CMSIS/mpu_armv7.h
+    - libraries/CMSIS/cachel1_armv7.h
+  cpu_info:
+    core: Cortex-M7
+  ui:
+    uart:
+      default_value: UART0
+      prompt_message_en: select one uart as console output interface
+      prompt_message_zh: 选择一个串口作为控制台信息输出接口
+    tx_pin:
+      default_value: PA9
+      prompt_message_en: 'set the tx pin name of the console device interface, the value should be with a format"P+[port name][pin number]",eg. PA9,PB6 '
+      prompt_message_zh: 设置控制台设备的数据发送引脚的名称, 名称应该具有以下格式"P+[端口名称][端口编号]", 比如：PA9, PB6
+    rx_pin:
+      default_value: PA10
+      prompt_message_en: 'set the rx pin name of the console device interface, the value should be with a format"P+[port name][pin number]", eg. PA10, PB7 '
+      prompt_message_zh: 设置控制台设备的数据发送引脚的名称，名称应该具有以下格式"P+[端口名称][端口编号]", 比如：PA9, PB6
