@@ -21,7 +21,71 @@ series:
   peripheral: {}
   sub_series:
   - sub_series_name: GD32H759
+    cpu_info:
+      max_clock: '600000000'
     chips:
+    - chip_name: GD32H759IG
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x100000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H759IG/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H759II
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x200000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H759II/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
     - chip_name: GD32H759IM
       peripheral: {}
       memory:
@@ -34,15 +98,10 @@ series:
         size: '0xD0000'
         init: '0'
         default: '1'
-      cpu_info:
-        max_clock: '600000000'
-        fpu: '1'
-        mpu: '1'
-        endian: Little-endian
       compiler:
         gcc:
           entry_point: Reset_Handler
-          link_script: linkscripts/GD32H7IM/link.ld
+          link_script: linkscripts/GD32H759IM/link.ld
           marco:
           - GD32H7XX
           files:
@@ -60,7 +119,7 @@ series:
           files: []
     ui:
       uart:
-        default_value: UART0
+        default_value: UART1
         prompt_message_zh: 选择一个串口作为控制台信息输出接口
       tx_pin:
         default_value: PA9
@@ -104,6 +163,8 @@ series:
   docs:
   - file: Documents/DUI0646B_cortex_m7_dgug.pdf
     title: Cortex-M7 Generic User Guide
+  - file: Documents/GD32H7xx_Firmware_Library_User_Guide_Rev1.4_CN.pdf
+    title: GD32H7xx Firmware Library User Guide
   source_files:
     file:
     - libraries/GD32H7xx_standard_peripheral
@@ -119,9 +180,12 @@ series:
     - libraries/CMSIS/cachel1_armv7.h
   cpu_info:
     core: Cortex-M7
+    fpu: '1'
+    mpu: '1'
+    endian: Little-endian
   ui:
     uart:
-      default_value: UART0
+      default_value: UART1
       prompt_message_en: select one uart as console output interface
       prompt_message_zh: 选择一个串口作为控制台信息输出接口
     tx_pin:
