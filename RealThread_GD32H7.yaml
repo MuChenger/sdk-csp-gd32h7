@@ -2,7 +2,7 @@
 vendor: RealThread
 dvendor: GigaDevice
 name: GD32H7
-version: 0.1.1
+version: 0.1.3
 yaml_version: 1
 type: Chip_Support_Packages
 family_name: GD32
@@ -117,18 +117,6 @@ series:
           link_script: none
           marco: []
           files: []
-    ui:
-      uart:
-        default_value: UART1
-        prompt_message_zh: 选择一个串口作为控制台信息输出接口
-      tx_pin:
-        default_value: PA9
-      rx_pin:
-        default_value: PA10
-        prompt_message_zh: 设置控制台设备的数据发送引脚的名称，名称应该具有以下格式"P+[端口名称][端口编号]", 比如：PA9, PB6
-    docs:
-    - file: Documents/GD32H759xxDatasheet_Rev1.9.pdf
-      title: GD32H7 Reference Manual
     svd:
       file: debug/svd/GD32H7xx.svd
     project_type:
@@ -160,11 +148,227 @@ series:
         - SOC_SERIES_GD32H7xx  
         source_files:
         - drivers/rtt
-  docs:
-  - file: Documents/DUI0646B_cortex_m7_dgug.pdf
-    title: Cortex-M7 Generic User Guide
-  - file: Documents/GD32H7xx_Firmware_Library_User_Guide_Rev1.4_CN.pdf
-    title: GD32H7xx Firmware Library User Guide
+  - sub_series_name: GD32H757
+    cpu_info:
+      max_clock: '600000000'
+    chips:
+    - chip_name: GD32H757VG
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x100000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H757VG/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H757VI
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x200000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H757VI/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H757VM
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x3C0000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H757VM/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H757ZG
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x100000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H757ZG/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H757ZI
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x200000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H757ZI/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H757VM
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x3C0000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H757VM/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    svd:
+      file: debug/svd/GD32H7xx.svd
+    project_type:
+      bare_metal:
+        function_map:
+          clk_init: none
+          sysTick: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/baremetal
+      rtt_nano:
+        function_map:
+          clk_init: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/nano
+      rtt:
+        function_map:
+          rt_hw_board_init;: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        - SOC_SERIES_GD32H7xx  
+        source_files:
+        - drivers/rtt
   source_files:
     file:
     - libraries/GD32H7xx_standard_peripheral
@@ -183,16 +387,3 @@ series:
     fpu: '1'
     mpu: '1'
     endian: Little-endian
-  ui:
-    uart:
-      default_value: UART1
-      prompt_message_en: select one uart as console output interface
-      prompt_message_zh: 选择一个串口作为控制台信息输出接口
-    tx_pin:
-      default_value: PA9
-      prompt_message_en: 'set the tx pin name of the console device interface, the value should be with a format"P+[port name][pin number]",eg. PA9,PB6 '
-      prompt_message_zh: 设置控制台设备的数据发送引脚的名称, 名称应该具有以下格式"P+[端口名称][端口编号]", 比如：PA9, PB6
-    rx_pin:
-      default_value: PA10
-      prompt_message_en: 'set the rx pin name of the console device interface, the value should be with a format"P+[port name][pin number]", eg. PA10, PB7 '
-      prompt_message_zh: 设置控制台设备的数据发送引脚的名称，名称应该具有以下格式"P+[端口名称][端口编号]", 比如：PA9, PB6
