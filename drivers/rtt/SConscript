@@ -30,6 +30,7 @@ group = DefineGroup('', [], depend=[''], CPPPATH=[])
 file_path = "board.h"
 include_str = """
 #include <gd32h7xx.h>
+#include "drv_legacy.h"
 """
 modify_board_h_file(os.path.join(cwd, file_path), include_str)
 os.remove(os.path.join(cwd,"SConscript"))
