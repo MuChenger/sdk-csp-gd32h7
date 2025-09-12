@@ -307,7 +307,7 @@ series:
           link_script: none
           marco: []
           files: []
-    - chip_name: GD32H757VM
+    - chip_name: GD32H757ZM
       peripheral: {}
       memory:
       - id: IROM1
@@ -322,7 +322,7 @@ series:
       compiler:
         gcc:
           entry_point: Reset_Handler
-          link_script: linkscripts/GD32H757VM/link.ld
+          link_script: linkscripts/GD32H757ZM/link.ld
           marco:
           - GD32H7XX
           files:
