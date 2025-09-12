@@ -369,6 +369,386 @@ series:
         - SOC_SERIES_GD32H7xx  
         source_files:
         - drivers/rtt
+  - sub_series_name: GD32H737
+    cpu_info:
+      max_clock: '600000000'
+    chips:
+    - chip_name: GD32H737IG
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x100000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737IG/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737II
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x200000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737II/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737IM
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x3C0000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737IM/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737VG
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x100000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737VG/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737VI
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x200000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737VI/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737VM
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x3C0000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737VM/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737ZG
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x100000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737ZG/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737ZI
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x200000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737ZI/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    - chip_name: GD32H737ZM
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x3C0000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H737ZM/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    svd:
+      file: debug/svd/GD32H7xx.svd
+    project_type:
+      bare_metal:
+        function_map:
+          clk_init: none
+          sysTick: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/baremetal
+      rtt_nano:
+        function_map:
+          clk_init: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/nano
+      rtt:
+        function_map:
+          rt_hw_board_init;: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        - SOC_SERIES_GD32H7xx  
+        source_files:
+        - drivers/rtt
+  - sub_series_name: GD32H75E
+    cpu_info:
+      max_clock: '600000000'
+    chips:
+    - chip_name: GD32H75EYM
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x8000000'
+        size: '0x3C0000'
+        default: '1'
+      - id: IRAM1
+        start: '0x24000000'
+        size: '0xD0000'
+        init: '0'
+        default: '1'
+      compiler:
+        gcc:
+          entry_point: Reset_Handler
+          link_script: linkscripts/GD32H75EYM/link.ld
+          marco:
+          - GD32H7XX
+          files:
+          - libraries/CMSIS/GD/GD32H7xx/Include/gd32h7xx.h
+          - libraries/CMSIS/GD/GD32H7xx/Source/GCC/startup_gd32h7xx.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+    svd:
+      file: debug/svd/GD32H7xx.svd
+    project_type:
+      bare_metal:
+        function_map:
+          clk_init: none
+          sysTick: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/baremetal
+      rtt_nano:
+        function_map:
+          clk_init: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        source_files:
+        - drivers/nano
+      rtt:
+        function_map:
+          rt_hw_board_init;: none
+          heap_init: none
+        marco:
+        - SOC_FAMILY_GD32
+        - SOC_SERIES_GD32H7
+        - SOC_SERIES_GD32H7xx  
+        source_files:
+        - drivers/rtt
   source_files:
     file:
     - libraries/GD32H7xx_standard_peripheral
